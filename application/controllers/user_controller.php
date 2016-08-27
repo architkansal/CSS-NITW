@@ -479,6 +479,49 @@ function fetch_grievences($hcdid)
 
 	}
 
+	function wsdc()
+	{
+		if(!$this->tank_auth->is_logged_in())
+				redirect('auth/login');
+		// $this->load->model('user_model');
+		$this->load->view('templates/header.html');
+		$this->load->view('user/wsdc.html');
+		$this->load->view('templates/footer.html');
+	}
+
+	function hostel()
+	{
+		if(!$this->tank_auth->is_logged_in())
+				redirect('auth/login');
+		// $this->load->model('user_model');
+		$this->load->view('templates/header.html');
+		$this->load->view('user/hostel.html');
+		$this->load->view('templates/footer.html');
+
+	}
+
+	function mess()
+	{
+		if(!$this->tank_auth->is_logged_in())
+				redirect('auth/login');
+		// $this->load->model('user_model');
+		$this->load->view('templates/header.html');
+		$this->load->view('user/mess.html');
+		$this->load->view('templates/footer.html');
+
+	}
+
+	function academics()
+	{
+		if(!$this->tank_auth->is_logged_in())
+				redirect('auth/login');
+		// $this->load->model('user_model');
+		$this->load->view('templates/header.html');
+		$this->load->view('user/academics.html');
+		$this->load->view('templates/footer.html');
+
+	}
+
 
 	function plum_problems()
 	{
