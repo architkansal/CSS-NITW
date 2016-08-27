@@ -35,7 +35,17 @@ padding-left: 60px;
 
 </head>
 
+<script>
+var x;
+function display(x)
+{
+  if(x==1){document.getElementById("WSDC");}
+  else if(x==2){document.getElementById("Hostel");}
+  else if(x==3){document.getElementById("Mess");}
+  else if(x==4){document.getElementById("Academics");}
 
+}
+</script>
 
 <script>
 $(document).ready(function() {
@@ -69,10 +79,10 @@ $(document).ready(function() {
             <button class="btn btn-blue dropdown-toggle btn-block" type="button" id="menu1" data-toggle="dropdown">Submmit New Post
             <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li role="presentation"><a role="menuitem" href="<?php echo base_url('/index.php/user_controller/wsdc'); ?>">WSDC</a></li>
-              <li role="presentation"><a role="menuitem" href="<?php echo base_url('/index.php/user_controller/hostel'); ?>">Hostel</a></li>
-              <li role="presentation"><a role="menuitem" href="<?php echo base_url('/index.php/user_controller/mess'); ?>">Mess</a></li>
-              <li role="presentation"><a role="menuitem" href="<?php echo base_url('/index.php/user_controller/academics'); ?>">Academics</a></li>
+              <li role="presentation" ><a role="menuitem" onclick="display(1)" href="<?php echo base_url('/index.php/user_controller/wsdc'); ?>">WSDC</a></li>
+              <li role="presentation"><a role="menuitem" onclick="display(2)" href="<?php echo base_url('/index.php/user_controller/hostel'); ?>">Hostel</a></li>
+              <li role="presentation"><a role="menuitem" onclick="display(3)" href="<?php echo base_url('/index.php/user_controller/mess'); ?>">Mess</a></li>
+              <li role="presentation"><a role="menuitem" onclick="display(4)" href="<?php echo base_url('/index.php/user_controller/academics'); ?>">Academics</a></li>
             </ul>
           </div>
         </li>
@@ -148,6 +158,7 @@ $(document).ready(function() {
             <th style="background-color:#4db6ac;">Complaint id</th>
             <th style="background-color:#4db6ac;">Date of Sub</th>
             <th style="background-color:#4db6ac;">Status</th>
+            <th style="background-color:#4db6ac;">Tag</th>
 			
         </tr>
     </thead>
@@ -155,20 +166,8 @@ $(document).ready(function() {
 
   <?php $x=1;?>
    <?php foreach($det as $pro) :?>
-   <script language="javascript">
-            var x = 0;
 
-            function hide() {
-                if($pro['isprivate'] == 0) {
-                    document.getElementById("table").style.visibility="hidden";
-                }
-
-                if($pro['isprivate'] == 1) {
-                    document.getElementById("table").style.visibility="visible";
-                }
-            }
-</script>
-   <tr id="table">
+<tr >
        
    
            <td ><?php echo $x++;?></td>
@@ -176,9 +175,66 @@ $(document).ready(function() {
     <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
      <td><?php echo $pro['date']; ?></td>
     <td><?php echo $pro['status']; ?></td>
+    <td><?php echo $pro['hcdid']; ?></td>
+    
      <!-- <td><?php //echo $pro['status'];?></td> -->
 
    </tr>
+
+   <tr id="WSDC">
+       
+   
+           <td ><?php echo $x++;?></td>
+     <?php if($pro['hcdid']==3):?>
+    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
+     <td><?php echo $pro['date']; ?></td>
+    <td><?php echo $pro['status']; ?></td>
+    <td><?php echo $pro['stat']
+    <?php endif; ?>
+     <!-- <td><?php //echo $pro['status'];?></td> -->
+
+   </tr>
+    <tr id="Hostel">
+       
+   
+           <td ><?php echo $x++;?></td>
+    <?php if($pro['hcdid']==5):?>
+    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
+     <td><?php echo $pro['date']; ?></td>
+    <td><?php echo $pro['status']; ?></td>
+    <td><?php echo $pro['stat']
+    <?php endif; ?>
+     <!-- <td><?php //echo $pro['status'];?></td> -->
+
+   </tr>
+    <tr id="Mess">
+       
+   
+           <td ><?php echo $x++;?></td>
+     <?php if($pro['hcdid']== 6):?>
+    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
+     <td><?php echo $pro['date']; ?></td>
+    <td><?php echo $pro['status']; ?></td>
+    <td><?php echo $pro['stat']
+    <?php endif; ?>
+     <!-- <td><?php //echo $pro['status'];?></td> -->
+
+   </tr>
+    <tr id="Academics">
+       
+   
+           <td ><?php echo $x++;?></td>
+     <?php if($pro['hcdid']==7):?>
+    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
+     <td><?php echo $pro['date']; ?></td>
+    <td><?php echo $pro['status']; ?></td>
+    <td><?php echo $pro['stat'] 
+    <?php endif; ?>
+     <!-- <td><?php //echo $pro['status'];?></td> -->
+
+   </tr>
+   
+
  
     <?php endforeach; ?>
    </tbody>
