@@ -23,6 +23,7 @@ class user_model extends CI_Controller
     $data['hcdid']=$_GET['hcdid'];
     $data['status']=0;
     $data['details']=$this->input->post('details');
+    $data['isprivate']=$this->input->post('privacy');
     $data['tag_id']= $this->input->post('dropdown');
     // $data['preftime'] =$this->input->post('time');
     // print_r($data);
@@ -55,7 +56,7 @@ class user_model extends CI_Controller
   {
     $q=1;
     // echo($hcdid);
-    $this->db->select('complaint.user_id,complaint.cid,complaint.status,users.name,users.contact');
+    $this->db->select('complaint.user_id,complaint.cid,complaint.status,users.name,users.contact,complaint.hcdid,complaint.date');
     $this->db->from('complaint');
     $this->db->join('users','users.id=complaint.user_id');
     $this->db->where('complaint.hcdid',$hcdid);

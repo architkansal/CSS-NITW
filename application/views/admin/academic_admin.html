@@ -3,7 +3,6 @@
 
 </head>
 
-
 <script>
 $(document).ready(function() {
     $('#example').DataTable();
@@ -13,59 +12,6 @@ $(document).ready(function() {
 
 <body>
   
-  <ul id="navigation">
-
- <li class="electricity">
-</br>
-</br>
-</br>
-</br></br></br>
-</br>
-<a href='<?php echo base_url("index.php/user_controller/show_details?p=1");?>'><h3>Electricity</h3></a></li>
-</br>
- <li class="plumber"><a href='<?php echo base_url("index.php/user_controller/show_details?p=3");?>'><h3>Plumber</h3></a> </li>
-</br>
- <li class="carpenter"><a href='<?php echo base_url("index.php/user_controller/show_details?p=2");?>'><h3>Carpenter</h3></a></li>
-</br>
- <li class="lan"><a href='<?php echo base_url("index.php/user_controller/show_details?p=4");?>'><h3>LAN</h3></a></li>
-</br>
- <li class="mess"><a href='<?php echo base_url("index.php/user_controller/show_details?p=6");?>'><h3>Mess</h3></a></li>
-</br>
- <li class="hostel"><a href='<?php echo base_url("index.php/user_controller/show_details?p=5");?>'><h3>Hostel</h3></a></li>
-</br>
-</ul>
-<script type="text/javascript">
-$(function() {
-
- $('#navigation a').stop().animate({'marginLeft':'-130px'},1000);
-
- $('#navigation > li').hover
- (
-  function () 
-  {$('a',$(this)).stop().animate({'marginLeft':'-1px'},200);},
-  function () 
-  {$('a',$(this)).stop().animate({'marginLeft':'-130px'},200);}
- );
-});
-</script>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
 <div class="row">
 
   <div class="container-fluid">
@@ -94,14 +40,14 @@ $(function() {
    
            <td ><?php echo $x++;?></td>
 
-    <td><a href="show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-    <td><?php echo "Hostel";?> </td>
-    <td><?php echo $pro['user_id']; ?></td>
-    <td><?php echo $pro['name']; ?></td>
+    <td><a href="/css-nitw/index.php/user_controller/show_ad_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
+    <td><?php echo "Academics";?> </td>
+    <td><?php echo $pro['date']; ?></td>
+    <td><?php echo $pro['status']; ?></td>
      <!-- <td><?php //echo $pro['status'];?></td> -->
 
    </tr>
- 
+    <?php endif; ?>
     <?php endforeach; ?>
    </tbody>
 

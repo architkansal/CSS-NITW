@@ -34,14 +34,14 @@ $(document).ready(function() {
 
   <?php $x=1;?>
    <?php foreach($det as $pro) :?>
-   <?php if($pro['hcdid']==6):?>
+   <?php if($pro['hcdid']==3):?>
    <tr>
        
    
            <td ><?php echo $x++;?></td>
 
     <td><a href="/css-nitw/index.php/user_controller/show_ad_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-    <td><?php echo "Mess";?> </td>
+    <td><?php echo "Wsdc"?> </td>
     <td><?php echo $pro['date']; ?></td>
     <td><?php echo $pro['status']; ?></td>
      <!-- <td><?php //echo $pro['status'];?></td> -->
