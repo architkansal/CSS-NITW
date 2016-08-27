@@ -38,7 +38,7 @@ class user_model extends CI_Controller
   function get_moderators($gid)
   {
       $mid = $gid*100+$gid;
-      $this ->db-> select('user_id','name')-> where('group_id', $gid)-> from('users');
+      $this ->db-> select('id,name')-> where('user_group_id', $mid)-> from('users');
       $grp=$this->db->get();
       $res=$grp->result_array();
       // $grp1=$res[0]['user_group_id'];
@@ -67,7 +67,7 @@ class user_model extends CI_Controller
   {
     $q=1;
     // echo($hcdid);
-    $this->db->select('complaint.user_id,complaint.cid,complaint.status,users.name,users.contact,complaint.hcdid,complaint.date');
+    $this->db->select('complaint.user_id,complaint.cid,complaint.status,users.name,users.contact,complaint.hcdid,complaint.date,assignee');
     $this->db->from('complaint');
     $this->db->join('users','users.id=complaint.user_id');
     $this->db->where('complaint.hcdid',$hcdid);

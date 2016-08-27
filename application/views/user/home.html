@@ -156,20 +156,20 @@ $(document).ready(function() {
 
   <?php $x=1;?>
    <?php foreach($det as $pro) :?>
-   <script language="javascript">
-            var x = 0;
+    <script language="javascript">
+//             var x = 0;
 
-            function hide() {
-                if($pro['isprivate'] == 0) {
-                    document.getElementById("table").style.visibility="hidden";
-                }
+//             function hide() {
+//                 if($pro['isprivate'] == 0) {
+//                     document.getElementById("table").style.visibility="hidden";
+//                 }
 
-                if($pro['isprivate'] == 1) {
-                    document.getElementById("table").style.visibility="visible";
-                }
-            }
-</script>
-   <tr id="table">
+//                 if($pro['isprivate'] == 1) {
+//                     document.getElementById("table").style.visibility="visible";
+//                 }
+//             }
+ </script>
+   <tr >
        
    
            <td ><?php echo $x++;?></td>
@@ -177,23 +177,20 @@ $(document).ready(function() {
     <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
     <td><?php echo $pro['hcdid']; ?></td>
      <td><?php echo $pro['date']; ?></td>
-    <td><?php echo $pro['status']; ?></td>
-         if( $pro['status']==0 )
-          {
-             <td><?php echo "IN PROGRESS...";?></td>;
-          }
-         else if( $pro['status']==1 ){
-           <td><?php echo "Resolved";?></td>;
-          }
-         else if( $pro['status']==-1 )
-          {
-            <td><?php echo "Deleted";?></td>;
-          }
-          else{
-            <td><?php echo "IN PROGRESS...";?></td>;
-          }
-     <!-- <td><?php //echo $pro['status'];?></td> -->
-
+    <!-- -->
+    <?php if( $pro['status']==0 ) :?>
+              <td>Registered</td>
+          <?php endif ;?>
+    <?php if( $pro['status']==1) :?>
+              <td>Closed</td>
+          <?php endif ;?>
+    <?php if( $pro['status']==-1 ) :?>
+              <td>Deleted</td>
+          <?php endif ;?>
+    <?php if( $pro['status']==2 ) :?>
+              <td>Postponed</td>
+          <?php endif ;?>
+        
    </tr>
  
     <?php endforeach; ?>
