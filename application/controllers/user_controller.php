@@ -32,10 +32,40 @@ class user_controller extends CI_Controller
 				$this->load->view('admin/home.html');
 				$this->load->view('templates/footer.html');
 			}
+			else if($group_id==3)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->view('admin/wsdc_admin.html');
+				$this->load->view('templates/footer.html');
+			}
 			else if($group_id==2)
 			{
 				$this->load->view('templates/header.html');
 				$this->load->view('admin/home.html');
+				$this->load->view('templates/footer.html');
+			}
+			else if($group_id==4)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->view('admin/StudentCouncil_admin.html');
+				$this->load->view('templates/footer.html');
+			}
+			else if($group_id==5)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->view('admin/hostel_admin.html');
+				$this->load->view('templates/footer.html');
+			}
+			else if($group_id==6)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->view('admin/mess_admin.html');
+				$this->load->view('templates/footer.html');
+			}
+			else if($group_id==7)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->view('admin/academic_admin.html');
 				$this->load->view('templates/footer.html');
 			}
 			else if($group_id==11)
