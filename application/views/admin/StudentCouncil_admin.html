@@ -12,7 +12,8 @@ $(document).ready(function() {
 <script>
    function myFunction() {
     var x = prompt("Enter Id of the Assignee: ");
-    document.getElementById("assigned").innerHTML= x;
+    if(x!=null)
+      document.getElementById("assigned").innerHTML= x;
   }
   </script>
 
@@ -71,7 +72,18 @@ $(document).ready(function() {
     <td><a href="/css-nitw/index.php/user_controller/show_ad_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
     <td><?php echo "Student Council";?> </td>
     <td><?php echo $pro['date']; ?></td>
-    <td><?php echo $pro['status']; ?></td>
+    <?php if( $pro['status']==0 ) :?>
+              <td>Registered</td>
+          <?php endif ;?>
+    <?php if( $pro['status']==1) :?>
+              <td>Closed</td>
+          <?php endif ;?>
+    <?php if( $pro['status']==-1 ) :?>
+              <td>Deleted</td>
+          <?php endif ;?>
+    <?php if( $pro['status']==2 ) :?>
+              <td>Postponed</td>
+          <?php endif ;?>
     <?php if($pro['assignee']!=NULL):?>
       <td id="assigned"> <a href="#" onclick="myFunction()"><?php echo $pro['assignee']; ?></a></td>
     <?php else :?>
