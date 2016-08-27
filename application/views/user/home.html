@@ -156,6 +156,7 @@ $(document).ready(function() {
 		
         <th style="background-color:#4db6ac;" >S.No</th>
             <th style="background-color:#4db6ac;">Complaint id</th>
+            <th style="background-color:#4db6ac;">Complaint type</th>
             <th style="background-color:#4db6ac;">Date of Sub</th>
             <th style="background-color:#4db6ac;">Status</th>
             <th style="background-color:#4db6ac;">Tag</th>
@@ -173,10 +174,9 @@ $(document).ready(function() {
            <td ><?php echo $x++;?></td>
 
     <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
+    <td><?php echo $pro['hcdid']; ?></td>
      <td><?php echo $pro['date']; ?></td>
     <td><?php echo $pro['status']; ?></td>
-    <td><?php echo $pro['hcdid']; ?></td>
-    
      <!-- <td><?php //echo $pro['status'];?></td> -->
 
    </tr>
