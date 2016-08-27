@@ -24,7 +24,7 @@ class user_controller extends CI_Controller
 				$id=$this->tank_auth->get_user_id();
 	  			$data['det']=$this->user_model->show_my_complaints($id);
 				$this->load->view('user/home.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==1)
 			{
