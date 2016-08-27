@@ -24,8 +24,8 @@ class user_model extends CI_Controller
     $data['status']=0;
     $data['details']=$this->input->post('details');
     $data['tag_id']= $this->input->post('dropdown');
-    $data['preftime'] =$this->input->post('time');
-    print_r($data);
+    // $data['preftime'] =$this->input->post('time');
+    // print_r($data);
     $this->db->insert('complaint',$data);
     
    
