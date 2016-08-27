@@ -28,6 +28,7 @@ $(document).ready(function() {
             <th>Complaint type</th>
             <th>Date of Sub</th>
             <th>Status</th>
+            <th>Complaint Type</th>
         </tr>
     </thead>
     <tbody> 
@@ -44,6 +45,18 @@ $(document).ready(function() {
     <td><?php echo "Mess";?> </td>
     <td><?php echo $pro['date']; ?></td>
     <td><?php echo $pro['status']; ?></td>
+     <?php if($pro['status']==0):?>
+      <td><?php echo "To Be Continued..";?></td>
+      <?php endif; ?>
+    <?php if($pro['status'==1):?>
+      <td><?php echo "Resolved";?></td>
+      <?php endif; ?>
+      <?php if($pro['status'==-1]):?>
+        <td><?php echo "Deleted";?></td>
+        <?php endif; ?>
+        <?php if($pro['status']==2):?>
+          <td><?php echo "Postponed";?></td>
+          <?php endif; ?>
      <!-- <td><?php //echo $pro['status'];?></td> -->
 
    </tr>
