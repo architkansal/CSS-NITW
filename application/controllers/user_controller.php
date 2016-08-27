@@ -21,8 +21,10 @@ class user_controller extends CI_Controller
 			if($group_id==0)
 			{
 				$this->load->view('templates/header.html');
-				$this->load->view('user/home.html');
-				$this->load->view('templates/footer.html');
+				$id=$this->tank_auth->get_user_id();
+	  			$data['det']=$this->user_model->show_my_complaints($id);
+				$this->load->view('user/home.html', $data);
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==1)
 			{
@@ -290,6 +292,7 @@ function fetch_grievences($hcdid)
 	  	//echo $cid;
 	  	$id=$this->tank_auth->get_user_id();
 	  	$this->load->model('user_model');
+	  	 
 	  	 $data['inf']=$this->user_model->get_c_details($cid);
 	  	 $data['user_grp']=$this->user_model->get_user_grp($id);
 	  	 $this->load->view('templates/header.html');

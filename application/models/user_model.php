@@ -251,7 +251,7 @@ class user_model extends CI_Controller
 
    function show_my_complaints($id)
    {
-    $this->db->select('cid,date,hcdid,preftime,details,status')
+    $this->db->select('cid,date,hcdid,preftime,details,status,isprivate')
              ->from('complaint')
              ->where('user_id',$id);
     $query=$this->db->get();
