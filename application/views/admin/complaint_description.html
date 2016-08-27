@@ -1,41 +1,59 @@
 <html>
 <head>
 	<title>SAG Portal</title>
+    <style>
+    h3{
+    	text-align: center;
+    	background-color: #4db6ac;
+
+
+    }
+    h5{
+    	text-align : left;
+    }
+    blockquote#card-blockquote{
+    	background-color: #4db6ac;
+    	style : italic ;
+
+    }
+    </style>
 </head>
 <body>
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
 			
-			<h3 style = "text-color:black"> Detailed Complaint :</h3>
+			<h3 style = "text-color:black"><bold> Detailed Complaint :</bold></h3>
 			
 		    </br>
-		    <p>
-		    <h5><bold>CID</bold> &#160 : &#160 <?php echo $inf[0]['cid']; ?></h5>
-		    </p>
-		    <p>
+		    <ul style="list-style-type:square" >
+		   <li> <h5><bold>Complaint Id
+		    </bold> &#160 : &#160 <?php echo $inf[0]['cid']; ?></h5>
+		    </li>
+		    <li>
 		    <h5>Username &#160 : &#160 <?php echo $inf[0]['cid']; ?></h5>
-		</p>
-		<p>
+		</li>
+		<li>
 		    <h5>Complaint Tag &#160 : &#160 <?php echo $inf[0]['cid']; ?></h5>
-		</p>
-		<p>
+		</li>
+		<li>
 		    <h5>Complaint Descripton &#160 : &#160 <?php echo $inf[0]['details']; ?></h5>
-		    <p>
-		    	<p>
+		    </li>
+		    	<li>
 		    <h5>Date of Complaint &#160 : &#160 <?php echo $inf[0]['date']; ?></h5>
-		</p>
-		<p>
+		</li>
+		<li>
 		    <h5>Hostel Name  &#160 : &#160  <?php echo $inf[0]['hostel']; ?></h5>
-		</p>
-		<p>
+		</li>
+		<li>
 		    <h5>Room Number &#160 : &#160 <?php echo $inf[0]['room']; ?></h5>
-		</p>
-		<p>
-		    <h5>Preferred Time  &#160 :  &#160 <?php echo $inf[0]['preftime']; ?></h5>
-		</p>
+		</li>
+		<li>
+		    <h5>Preferred Time of Completion &#160 :  &#160 <?php echo $inf[0]['preftime']; ?></h5>
+		</li>
+	</ul>
 		    <hr>
-		    <h2>Report:</h2>
+		  <h2>Status of the Complaint:</h2>
 		    <h5></h5>
 
 	
