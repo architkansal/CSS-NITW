@@ -15,8 +15,7 @@ class user_model extends CI_Controller
   function reg_complaint()
   {
     
-    $data['user_id'] = $this->tank_auth->get_user_id();
-    
+    $data['user_id'] = $this->tank_auth->get_user_id(); 
     $data['hostel'] =$this->input->post('hostel');
     $data['room'] =$this->input->post('room');
     $data['mobile'] =$this->input->post('contact');
@@ -35,6 +34,18 @@ class user_model extends CI_Controller
 
   }
   
+
+  function get_moderators($gid)
+  {
+      $mid = $gid*100+$gid;
+      $this ->db-> select('user_id','name')-> where('group_id', $gid)-> from('users');
+      $grp=$this->db->get();
+      $res=$grp->result_array();
+      // $grp1=$res[0]['user_group_id'];
+      return $res;
+  }
+
+
   function group_id()
   {
     $id = $this->tank_auth->get_user_id();
