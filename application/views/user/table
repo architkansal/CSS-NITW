@@ -1,0 +1,20 @@
+<html>
+<head>
+<script language="javascript">
+            var x = 0;
+
+            function hide() {
+                if(pro['isprivate'] == 0) {
+                    document.getElementById("table").style.visibility="hidden";
+                }
+
+                if(pro['isprivate'] == 1) {
+                    document.getElementById("tabele").style.visibility="visible";
+                }
+            }
+</script>
+</head>
+<body>
+        
+</body>
+</html>
