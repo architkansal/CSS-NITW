@@ -20,7 +20,7 @@ class user_controller extends CI_Controller
 			$group_id=$this->user_model->group_id();
 			if($group_id==0)
 			{
-				$this->load->view('templates/header.html');
+				// $this->load->view('templates/header.html');
 				$id=$this->tank_auth->get_user_id();
 	  			$data['det']=$this->user_model->show_my_complaints($id);
 				$this->load->view('user/home.html', $data);
@@ -289,10 +289,10 @@ function fetch_grievences($hcdid)
 	  	if(!$this->tank_auth->is_logged_in())
 				redirect('auth/login');
 	  	$cid=$_GET['cid'];
-	  	//echo $cid;
+	  	// echo $cid;
 	  	$id=$this->tank_auth->get_user_id();
 	  	$this->load->model('user_model');
-	  	 
+	  	 // echo ' bullshit';
 	  	 $data['inf']=$this->user_model->get_c_details($cid);
 	  	 $data['user_grp']=$this->user_model->get_user_grp($id);
 	  	 $this->load->view('templates/header.html');
