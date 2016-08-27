@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Carpenter Complaint</title>
+    <meta name="description" content="Slick &amp; clean CSS3 Forms Pack" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Forms stylesheet -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('/main1.css')?>" media="screen" />
+    <!-- / Forms stylesheet -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('/demo.css')?>" media="screen" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!--[if IE 9]>
+        <script type="text/javascript" src="js/placeholder.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        if(top != self) {
+            window.open(self.location.href, '_top');
+        }
+    </script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            // Preloader
+            $("#switch").click(function() {
+              $(this).toggleClass("on");
+              $("#links").toggleClass("odprt zaprt");
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<div class="row">
+<div class="col-md-5">
+</div>
+<div class="col-md-7">
+
+<div id="page-2">
+
+    <div class="clrfx-buy"></div>
+
+    <section id="slick">
+        
+        <div class="feedback-form">
+            <!-- Title -->
+            <div class="title">Register your complaint here</div> 
+            <br>
+        </br>
+    </br>
+</br>
+            <form action="submit_complaint?hcdid=44" name="feedback" id="feedback" method="post">
+                <div class="field">
+                    <input name="sname" placeholder="Your name" type="text" id="name" required />
+                    <span class="entypo-star icon"></span>
+                    <span class="slick-tip left">Enter your name</span>
+                </div>
+                <div class="field">
+                    <input name="hostel" placeholder="Hostel name" type="text" id="hostel" required />
+                    <span class="entypo-mobile icon"></span>
+                    <span class="slick-tip left">Enter your hostel</span>
+                </div>
+                <div class="field">
+                    <input name="room" placeholder="room number" type="text" id="room" required />
+                    <span class="entypo-mobile icon"></span>
+                    <span class="slick-tip left">Enter your room number</span>
+                </div>
+                <div class="field">
+                    <input name="contact" placeholder="contact number" type="number" id="hostel" required />
+                    <span class="entypo-mail icon"></span>
+                    <span class="slick-tip left">Enter your contact number</span>
+                </div>
+                <div class="field">
+                    <select name="dropdown" id="subject" class="grayed" onClick="this.className=this.options[this.selectedIndex].className">
+                        <option value="" disabled="disabled" selected="selected" class="disabled">Complaints</option>
+                        <option value="44001">1.Doors/window lock </option>
+                        <option value="44002">2.cupboard problems</option>
+                        <option value="44003">3.Window glasses</option>
+                         <option value="44004">4.Table/Chair/bed problems</option>
+                          <option value="44005">5.others</option>
+                    </select>
+                    <div id="arrow-select"></div>
+                    <svg id="arrow-select-svg"></svg>
+                    <span class="entypo-menu icon"></span>
+                    <span class="slick-tip left">Choose complaint</span>
+                </div>
+                
+                <!-- Message input -->
+                <div class="field">
+                    <textarea name="details" placeholder="Describe problem" id="message" ></textarea>
+                    <span class="entypo-list icon"></span>
+                    <span class="slick-tip left">Describe your problem</span>
+                </div>
+                
+
+                 <div class="field">
+                    <input name="time" placeholder="prefred time" type="time"   required />
+                    <span class="entypo-mail icon"></span>
+                    <span class="slick-tip left">Preferred Time</span>
+                 
+                     
+                </div>
+
+
+
+
+
+
+
+
+               
+               
+                
+                <div class="clrfx mt-10 mb-20 bt"></div>
+                
+                <div class="clrfx mt-20"></div>
+                <!-- Terms and Conditions link -->
+                <div class="terms w-47">Your information won’t be disclosed.<br />Read our <a href="#terms-popup">Terms and Conditions</a>.</div>
+                <input type="submit" value="Send" class="send" form="feedback" name="send" />
+            </form>
+            <!-- / Form fields -->
+        </div>
+        <!-- / Feedback form -->
+        <!-- Terms and conditions -->
+        <div id="terms-popup" class="terms-window">
+            <a href="#close" class="close-overlay"></a>
+            <div>
+                <a href="#close" class="close entypo-cancel-circled"></a>
+                <div class="title">Terms &amp; Conditions</div>
+                <p class="intro" style=color:rgb(128,128,150)>
+                1. Describe your problem in least words possible( if its not mentioned in drop down)<br>
+                2. PLEASE enter a valid problem.<br>
+                3. Don't fill the form unnecessarily.<br>
+                4. Choose time at which you will be available in your room only.<br>
+                5. Provide  valid contact number only. </p>
+                
+            </div>
+        </div>
+        <!-- / Terms and conditions -->
+    </section>
+
+    <div class="clrfx-buy"></div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40721121-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
