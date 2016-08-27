@@ -88,14 +88,14 @@ $(function() {
 
   <?php $x=1;?>
    <?php foreach($det as $pro) :?>
-   <?php if($pro['hcdid']==33) :?>
+   <?php if($pro['hcdid']==5):?>
    <tr>
        
    
            <td ><?php echo $x++;?></td>
 
     <td><a href="show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-    <td><?php echo "LAN";?> </td>
+    <td><?php echo "Hostel";?> </td>
     <td><?php echo $pro['user_id']; ?></td>
     <td><?php echo $pro['name']; ?></td>
      <!-- <td><?php //echo $pro['status'];?></td> -->
