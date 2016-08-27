@@ -1,5 +1,6 @@
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 </head>
 
@@ -8,7 +9,12 @@ $(document).ready(function() {
     $('#example').DataTable();
 } );
 </script>
-
+<script>
+  $.post( "user_controller.php", { name: "John", time: "2pm" })
+  .done(function( data ) {
+    alert( "Data Loaded: " + data );
+  });
+</script>
 
 <body>
   

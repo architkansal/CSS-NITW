@@ -42,7 +42,8 @@ function display(x)
   if(x==1){document.getElementById("WSDC");}
   else if(x==2){document.getElementById("Hostel");}
   else if(x==3){document.getElementById("Mess");}
-  else if(x==4){document.getElementById("Academics");}
+  else if(x==4){document.getElementById("Academics");
+  else if(x==5){document.getElementById("Student Council");}
 
 }
 </script>
@@ -83,6 +84,7 @@ $(document).ready(function() {
               <li role="presentation"><a role="menuitem" onclick="display(2)" href="<?php echo base_url('/index.php/user_controller/hostel'); ?>">Hostel</a></li>
               <li role="presentation"><a role="menuitem" onclick="display(3)" href="<?php echo base_url('/index.php/user_controller/mess'); ?>">Mess</a></li>
               <li role="presentation"><a role="menuitem" onclick="display(4)" href="<?php echo base_url('/index.php/user_controller/academics'); ?>">Academics</a></li>
+              <li role="presentation"><a role="menuitem" onclick="display(5)" href="<?php echo base_url('/index.php/user_controller/studentcouncil'); ?>">Student Council</a></li>
             </ul>
           </div>
         </li>
@@ -144,6 +146,15 @@ $(document).ready(function() {
     <li role="presentation"><a role="menuitem" href="#">Makeup exams</a></li>
     <li role="presentation"><a role="menuitem" href="#">Attendence problems</a></li>
     <li role="presentation"><a role="menuitem" href="#">Course registration</a></li>
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-blue dropdown-toggle btn-block" type="button" style="background-color:#4bb6ac"  id="menu1" data-toggle="dropdown">Student Council
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+    <li role="presentation"><a role="menuitem" href="#">Club Issue</a></li>
+    <li role="presentation"><a role="menuitem" href="#">Campus Issue</a></li>
+    <li role="presentation"><a role="menuitem" href="#">Other Issue</a></li>
   </ul>
 </div>
 </div>
@@ -225,6 +236,19 @@ $(document).ready(function() {
    
            <td ><?php echo $x++;?></td>
      <?php if($pro['hcdid']==7):?>
+    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
+     <td><?php echo $pro['date']; ?></td>
+    <td><?php echo $pro['status']; ?></td>
+    <td><?php echo $pro['stat'] 
+    <?php endif; ?>
+     <!-- <td><?php //echo $pro['status'];?></td> -->
+
+   </tr>
+    <tr id="Student Council">
+       
+   
+           <td ><?php echo $x++;?></td>
+     <?php if($pro['hcdid']==4):?>
     <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
      <td><?php echo $pro['date']; ?></td>
     <td><?php echo $pro['status']; ?></td>

@@ -443,6 +443,17 @@ function fetch_grievences($hcdid)
 
 	}
 
+	function studentcouncil()
+	{
+		if(!$this->tank_auth->is_logged_in())
+				redirect('auth/login');
+		// $this->load->model('user_model');
+		$this->load->view('templates/header.html');
+		$this->load->view('user/studentcouncil.html.html');
+		$this->load->view('templates/footer.html');
+
+	}
+
 
 	function plum_problems()
 	{
