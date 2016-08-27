@@ -6,6 +6,16 @@
 
 
 </head>
+
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+
+
+
+</script>
 <body>
   
  <div class="row">
@@ -16,6 +26,35 @@
 
     </div>
     <div class="col-md-7">
+    	<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Complaint id</th>
+            <th>Date of Sub</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody> 
+
+  <?php $x=1;?>
+   <?php foreach($det as $pro) :?>
+   
+   <tr>
+       
+   
+           <td ><?php echo $x++;?></td>
+
+    <td><a href="show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
+    <td><?php echo $pro['user_id']; ?></td>
+    <td><?php echo $pro['name']; ?></td>
+     <!-- <td><?php //echo $pro['status'];?></td> -->
+
+   </tr>
+ 
+    <?php endforeach; ?>
+   </tbody>
+
 
 
     </div>
