@@ -155,8 +155,20 @@ $(document).ready(function() {
 
   <?php $x=1;?>
    <?php foreach($det as $pro) :?>
-   
-   <tr>
+   <script language="javascript">
+            var x = 0;
+
+            function hide() {
+                if($pro['isprivate'] == 0) {
+                    document.getElementById("table").style.visibility="hidden";
+                }
+
+                if($pro['isprivate'] == 1) {
+                    document.getElementById("table").style.visibility="visible";
+                }
+            }
+</script>
+   <tr id="table">
        
    
            <td ><?php echo $x++;?></td>
