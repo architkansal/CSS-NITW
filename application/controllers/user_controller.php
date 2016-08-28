@@ -62,6 +62,15 @@ class user_controller extends CI_Controller
 				$this->load->view('admin/StudentCouncil_admin.html', $data);
 				// $this->load->view('templates/footer.html');	
 			}
+			else if($group_id==404)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->model('user_model');
+    			$data['det']=$this->user_model->get_complaints($group_id);
+    			$data['assignee']=$this->user_model->get_moderators($group_id);
+				$this->load->view('admin/scmoderator.html', $data);
+				// $this->load->view('templates/footer.html');	
+			}
 			else if($group_id==5)
 			{
 				$this->load->view('templates/header.html');
@@ -129,6 +138,18 @@ class user_controller extends CI_Controller
 	
 	}
 
+
+	function assign_to_issue()
+	{
+			// echo 'hurray!';
+			// return "jhhh";
+		$this->load->model('user_model');
+		$dt['cid'] = $_POST['cid'];
+		$dt['assignee'] = $_POST['assignee'];
+		// print_r($dt);				
+		$str = $this->user_model->assignee($dt);
+		return $str;	
+	}
 
 
 	function submit_complaint()   ///complaint form submit

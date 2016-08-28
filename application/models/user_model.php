@@ -46,6 +46,27 @@ class user_model extends CI_Controller
   }
 
 
+  function assignee($dt)
+  {
+    $cid = $dt['cid'];
+    $data = array('assignee'=>$dt['assignee']);
+    $this->db->where('cid' , $cid)
+            ->update('complaint' , $data );
+    $this->db->select('name')->where('id',$dt['assignee'])->from('users');
+    $grp = $this->db->get();
+    $res = $grp->result_array();
+    $str = (string)$res[0]['name'];
+    $data = array();
+    $data['ts_details']="The complaint has been assigned to ".$str;
+    $data['cid']=$cid;
+    $this->db->insert('cupdates',$data);
+    $s=1;
+    return $s;
+   }
+    // return $dta;
+  
+
+
   function group_id()
   {
     $id = $this->tank_auth->get_user_id();

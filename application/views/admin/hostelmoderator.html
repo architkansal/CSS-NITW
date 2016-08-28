@@ -10,19 +10,16 @@ $(document).ready(function() {
 </script>
     
 <script>
-   function myFunction(obj) {
-    var x = prompt("Enter Id of the Assignee: ");
-    if(x!=null)
-      document.getElementById("assigns").innerHTML= x;
-      var the_cid = obj.getAttribute('cid');
-      // var name = obj.getAttribute('name');
-    $.post( "user_controller/assign_to_issue", { cid: the_cid, assignee: x})
-    .done(function( data ) {
-        console.log(data);
-      //alert( "Data Loaded: " + data );
-      window.location.reload();
-    });
-  }
+  //  function myFunction(obj) {
+  //   var x = prompt("Enter Id of the Assignee: ");
+  //   if(x!=null)
+  //     document.getElementById("assigned").innerHTML= x;
+  //     var the_cid = obj.getAttribute('cid');
+  //   $.post( "user_controller/assign_to_issue", { cid: the_cid, assignee: x })
+  //   .done(function( data ) {
+  //     alert( "Data Loaded: " + data );
+  //   });
+  // }
   </script>
 
 
@@ -33,7 +30,7 @@ $(document).ready(function() {
   <div class="container-fluid">
     <div class="col-md-1"> </div>
     <div class="col-md-3"> 
-        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <!-- <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
     <thead>
         <tr>
             <th>S.No</th>
@@ -54,7 +51,7 @@ $(document).ready(function() {
     <?php endforeach; ?>
    </tbody>
 
- </table>
+ </table> -->
     </div>
     <div class="col-md-7">
         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -94,7 +91,15 @@ $(document).ready(function() {
     <?php if( $pro['status']==2 ) :?>
               <td>Postponed</td>
           <?php endif ;?>
-    <td id="assigned"> <button class='assign-btn' id='assigns' cid="<?php echo $pro['cid']?>" onclick="myFunction(this)"><?php echo $pro['assignee']; ?></td>
+    <td id="assigned"> <button class='assign-btn' ><?php echo $pro['assignee']; ?></a></td>
+   <!--  <?php if($pro['assignee']!=NULL):?>
+
+      <td id="assigned"> <a href="#" onclick="myFunction()"><?php echo $pro['assignee']; ?></a></td>
+    <?php else :?>
+      <td id="assigned"> <a href="#" onclick="myFunction()"> <?php echo 'NULL'; ?></a></td>
+    <?php endif; ?> -->
+  
+     <!-- <td><?php //echo $pro['status'];?></td> -->
 
    </tr>
     <?php endif; ?>

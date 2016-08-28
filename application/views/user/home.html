@@ -175,7 +175,22 @@ $(document).ready(function() {
            <td ><?php echo $x++;?></td>
 
     <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-    <td><?php echo $pro['hcdid']; ?></td>
+    <!-- <td><?php //echo $pro['hcdid']; ?></td> -->
+    <?php if( $pro['hcdid']==4):?></td>
+           <td>Student Council</td>
+         <?php endif ;?>
+     <?php if( $pro['hcdid']==3) :?>
+              <td>WSDC</td>
+          <?php endif ;?>
+    <?php if( $pro['hcdid']==5) :?>
+              <td>Hostel</td>
+          <?php endif ;?>
+    <?php if( $pro['hcdid']==6 ) :?>
+              <td>Mess</td>
+          <?php endif ;?>
+      <?php if( $pro['hcdid']==7 ) :?>
+              <td>Academics</td>
+          <?php endif ;?>
      <td><?php echo $pro['date']; ?></td>
     <!-- -->
     <?php if( $pro['status']==0 ) :?>
