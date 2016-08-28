@@ -95,12 +95,49 @@ class user_model extends CI_Controller
     $this->db->where('complaint.status',0);
     $this->db->or_where('complaint.status',-1);
     $this->db->or_where('complaint.status',2);
+    $this->db->or_where('complaint.status',1);
     
     $grp=$this->db->get();
     $res=$grp->result_array();
     //print_r($res);
      return $res;
 
+  }
+
+
+  function get_complaints_all() 
+  {
+    $q=1;
+    // echo($hcdid);
+    $this->db->select('complaint.user_id,complaint.cid,complaint.status,users.name,users.contact,complaint.hcdid,complaint.date,assignee');
+    $this->db->from('complaint');
+    $this->db->join('users','users.id=complaint.user_id');
+    $this->db->where('complaint.status',0);
+    $this->db->or_where('complaint.status',-1);
+    $this->db->or_where('complaint.status',2);
+    $this->db->or_where('complaint.status',1);
+    
+    $grp=$this->db->get();
+    $res=$grp->result_array();
+    //print_r($res);
+     return $res;
+
+  }
+
+function get_moderators_all()
+  {
+      //$mid = $gid*100+$gid;
+      $this ->db-> select('id,name');
+      $this->db->from('users');
+      $this->db->where('user_group_id',303);
+      $this->db->or_where('user_group_id',404);
+      $this->db->or_where('user_group_id',505);
+      $this->db->or_where('user_group_id',606);
+      $this->db->or_where('user_group_id',707);
+      $grp=$this->db->get();
+      $res=$grp->result_array();
+      // $grp1=$res[0]['user_group_id'];
+      return $res;
   }
 
   function reg_grievance($insert_data=NULL)

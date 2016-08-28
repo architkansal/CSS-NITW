@@ -3,7 +3,11 @@
 <head>
   <title>CSS Portal</title>
 
+<<<<<<< HEAD
   <link rel="stylesheet" href="<?php echo base_url('assets/bs3.min.js')?>">
+=======
+  <link rel="stylesheet" href="<?php echo base_url('assets/bs.min.css')?>">
+>>>>>>> 69101fbc90f645fdfaa22b1b093658754af98b0e
   <!-- <link rel="stylesheet" href="<?php //echo base_url('assets/bootstrap.css')?>">  -->
   <!-- <link rel="stylesheet" href="<?php //echo base_url('assets/bootstrap2.css')?>"> -->
   <script src="<?php echo base_url('assets/jq2.min.js')?>"></script>
@@ -227,72 +231,6 @@ $(document).ready(function() {
               <td>Postponed</td>
           <?php endif ;?>
         
-   </tr>
-
-   <tr id="WSDC">
-       
-   
-           <td ><?php echo $x++;?></td>
-     <?php if($pro['hcdid']==3):?>
-    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-     <td><?php echo $pro['date']; ?></td>
-    <td><?php echo $pro['status']; ?></td>
-    <td><?php echo $pro['stat']; ?></td>
-    <?php endif; ?>
-     <!-- <td><?php //echo $pro['status'];?></td> -->
-
-   </tr>
-    <tr id="Hostel">
-       
-   
-           <td ><?php echo $x++;?></td>
-    <?php if($pro['hcdid']==5):?>
-    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-     <td><?php echo $pro['date']; ?></td>
-    <td><?php echo $pro['status']; ?></td>
-    <td><?php echo $pro['stat']
-    <?php endif; ?>
-     <!-- <td><?php //echo $pro['status'];?></td> -->
-
-   </tr>
-    <tr id="Mess">
-       
-   
-           <td ><?php echo $x++;?></td>
-     <?php if($pro['hcdid']== 6):?>
-    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-     <td><?php echo $pro['date']; ?></td>
-    <td><?php echo $pro['status']; ?></td>
-    <td><?php echo $pro['stat']
-    <?php endif; ?>
-     <!-- <td><?php //echo $pro['status'];?></td> -->
-
-   </tr>
-    <tr id="Academics">
-       
-   
-           <td ><?php echo $x++;?></td>
-     <?php if($pro['hcdid']==7):?>
-    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-     <td><?php echo $pro['date']; ?></td>
-    <td><?php echo $pro['status']; ?></td>
-    <td><?php echo $pro['stat'] 
-    <?php endif; ?>
-     <!-- <td><?php //echo $pro['status'];?></td> -->
-
-   </tr>
-    <tr id="Student Council">
-       
-   
-           <td ><?php echo $x++;?></td>
-     <?php if($pro['hcdid']==4):?>
-    <td><a href="user_controller/show_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-     <td><?php echo $pro['date']; ?></td>
-    <td><?php echo $pro['status']; ?></td>
-    <td><?php echo $pro['stat'] 
-    <?php endif; ?>
-     <!-- <td><?php //echo $pro['status'];?></td> -->
-
    </tr>
  
     <?php endforeach; ?>
