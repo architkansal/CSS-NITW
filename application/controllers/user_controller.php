@@ -30,10 +30,11 @@ class user_controller extends CI_Controller
 			{
 				$this->load->view('templates/header.html');
 				$this->load->model('user_model');
-    			$data['det']=$this->user_model->get_complaints($group_id);
-    			// $data['assignee']=$this->user_model->get_moderators($group_id);
+    			$data['det']=$this->user_model->get_complaints_all();
+    			$data['assignee']=$this->user_model->get_moderators_all();
 				$this->load->view('admin/home.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
+				
 			}
 			else if($group_id==3)
 			{
@@ -42,7 +43,7 @@ class user_controller extends CI_Controller
     			$data['det']=$this->user_model->get_complaints($group_id);
     			$data['assignee']=$this->user_model->get_moderators($group_id);
 				$this->load->view('admin/wsdc_admin.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==303)
 			{
@@ -51,16 +52,16 @@ class user_controller extends CI_Controller
     			$data['det']=$this->user_model->get_complaints($group_id);
     			$data['assignee']=$this->user_model->get_moderators($group_id);
 				$this->load->view('admin/wsdcmoderator.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==2)
 			{
 				$this->load->view('templates/header.html');
 				$this->load->model('user_model');
-    			$data['det']=$this->user_model->get_complaints($group_id);
-    			$data['assignee']=$this->user_model->get_moderators($group_id);
+    			$data['det']=$this->user_model->get_complaints_all($group_id);
+    			$data['assignee']=$this->user_model->get_moderators_all($group_id);
 				$this->load->view('admin/home.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==202)
 			{
@@ -69,7 +70,7 @@ class user_controller extends CI_Controller
     			$data['det']=$this->user_model->get_complaints($group_id);
     			$data['assignee']=$this->user_model->get_moderators($group_id);
 				$this->load->view('admin/home.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==4)
 			{
@@ -105,7 +106,7 @@ class user_controller extends CI_Controller
     			$data['det']=$this->user_model->get_complaints($group_id);
     			$data['assignee']=$this->user_model->get_moderators($group_id);
 				$this->load->view('admin/hostelmoderator.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==6)
 			{
@@ -114,7 +115,7 @@ class user_controller extends CI_Controller
     			$data['det']=$this->user_model->get_complaints($group_id);
     			$data['assignee']=$this->user_model->get_moderators($group_id);
 				$this->load->view('admin/mess_admin.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==606)
 			{
@@ -123,7 +124,7 @@ class user_controller extends CI_Controller
     			$data['det']=$this->user_model->get_complaints($group_id);
     			$data['assignee']=$this->user_model->get_moderators($group_id);
 				$this->load->view('admin/messmoderator.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==7)
 			{
@@ -132,7 +133,7 @@ class user_controller extends CI_Controller
     			$data['det']=$this->user_model->get_complaints($group_id);
     			$data['assignee']=$this->user_model->get_moderators($group_id);
 				$this->load->view('admin/academic_admin.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 			else if($group_id==707)
 			{
@@ -141,14 +142,14 @@ class user_controller extends CI_Controller
     			$data['det']=$this->user_model->get_complaints($group_id);
     			$data['assignee']=$this->user_model->get_moderators($group_id);
 				$this->load->view('admin/academicmoderator.html', $data);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');				
 			}
 			else if($group_id==11)
 			{
 				$arr['det'] = $this->fetch_complaints($group_id);
 				$this->load->view('templates/header.html');
 				$this->load->view('admin/elec_admin.html',$arr);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 				
 			else if($group_id==44)
@@ -156,7 +157,7 @@ class user_controller extends CI_Controller
 				$arr['det'] = $this->fetch_complaints($group_id);
 				$this->load->view('templates/header.html');
 				$this->load->view('admin/carpenter_admin.html',$arr);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 				
 			else if($group_id==33)
@@ -164,7 +165,7 @@ class user_controller extends CI_Controller
 				$arr['det'] = $this->fetch_complaints($group_id);
 				$this->load->view('templates/header.html');
 				$this->load->view('admin/lan_admin.html',$arr);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 				
 			else if($group_id==22)
@@ -172,7 +173,7 @@ class user_controller extends CI_Controller
 				$arr['det'] = $this->fetch_complaints($group_id);
 				$this->load->view('templates/header.html');
 				$this->load->view('admin/plumber_admin.html',$arr);
-				$this->load->view('templates/footer.html');
+				// $this->load->view('templates/footer.html');
 			}
 				
 		}
