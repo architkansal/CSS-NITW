@@ -44,7 +44,25 @@ class user_controller extends CI_Controller
 				$this->load->view('admin/wsdc_admin.html', $data);
 				$this->load->view('templates/footer.html');
 			}
+			else if($group_id==303)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->model('user_model');
+    			$data['det']=$this->user_model->get_complaints($group_id);
+    			$data['assignee']=$this->user_model->get_moderators($group_id);
+				$this->load->view('admin/wsdcmoderator.html', $data);
+				$this->load->view('templates/footer.html');
+			}
 			else if($group_id==2)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->model('user_model');
+    			$data['det']=$this->user_model->get_complaints($group_id);
+    			$data['assignee']=$this->user_model->get_moderators($group_id);
+				$this->load->view('admin/home.html', $data);
+				$this->load->view('templates/footer.html');
+			}
+			else if($group_id==202)
 			{
 				$this->load->view('templates/header.html');
 				$this->load->model('user_model');
@@ -80,6 +98,15 @@ class user_controller extends CI_Controller
 				$this->load->view('admin/hostel_admin.html', $data);
 				// $this->load->view('templates/footer.html');
 			}
+			else if($group_id==505)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->model('user_model');
+    			$data['det']=$this->user_model->get_complaints($group_id);
+    			$data['assignee']=$this->user_model->get_moderators($group_id);
+				$this->load->view('admin/hostelmoderator.html', $data);
+				$this->load->view('templates/footer.html');
+			}
 			else if($group_id==6)
 			{
 				$this->load->view('templates/header.html');
@@ -89,6 +116,15 @@ class user_controller extends CI_Controller
 				$this->load->view('admin/mess_admin.html', $data);
 				$this->load->view('templates/footer.html');
 			}
+			else if($group_id==606)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->model('user_model');
+    			$data['det']=$this->user_model->get_complaints($group_id);
+    			$data['assignee']=$this->user_model->get_moderators($group_id);
+				$this->load->view('admin/messmoderator.html', $data);
+				$this->load->view('templates/footer.html');
+			}
 			else if($group_id==7)
 			{
 				$this->load->view('templates/header.html');
@@ -96,6 +132,15 @@ class user_controller extends CI_Controller
     			$data['det']=$this->user_model->get_complaints($group_id);
     			$data['assignee']=$this->user_model->get_moderators($group_id);
 				$this->load->view('admin/academic_admin.html', $data);
+				$this->load->view('templates/footer.html');
+			}
+			else if($group_id==707)
+			{
+				$this->load->view('templates/header.html');
+				$this->load->model('user_model');
+    			$data['det']=$this->user_model->get_complaints($group_id);
+    			$data['assignee']=$this->user_model->get_moderators($group_id);
+				$this->load->view('admin/academicmoderator.html', $data);
 				$this->load->view('templates/footer.html');
 			}
 			else if($group_id==11)

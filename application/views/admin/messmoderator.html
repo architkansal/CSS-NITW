@@ -69,7 +69,7 @@ $(document).ready(function() {
 
   <?php $x=1;?>
    <?php foreach($det as $pro) :?>
-   <?php if($pro['hcdid']==4):?>
+   <?php if($pro['hcdid']==6):?>
    <tr>
     
     <td ><?php echo $x++;?></td>
@@ -77,7 +77,7 @@ $(document).ready(function() {
       <?php echo $pro['cid']; ?>
     </div>
     <td ><a href="/css-nitw/index.php/user_controller/show_ad_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
-    <td><?php echo "Student Council";?> </td>
+    <td><?php echo "Mess";?> </td>
     <td><?php echo $pro['date']; ?></td>
     <?php if( $pro['status']==0 ) :?>
               <td>Registered</td>

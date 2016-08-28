@@ -1,6 +1,8 @@
 <html>
 <head>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 </head>
 
 <script>
@@ -8,12 +10,20 @@ $(document).ready(function() {
     $('#example').DataTable();
 } );
 </script>
-    
+
 <script>
-   function myFunction() {
+   function myFunction(obj) {
     var x = prompt("Enter Id of the Assignee: ");
     if(x!=null)
-      document.getElementById("assigned").innerHTML= x;
+      document.getElementById("assigns").innerHTML= x;
+      var the_cid = obj.getAttribute('cid');
+      // var name = obj.getAttribute('name');
+    $.post( "user_controller/assign_to_issue", { cid: the_cid, assignee: x})
+    .done(function( data ) {
+        console.log(data);
+      //alert( "Data Loaded: " + data );
+      window.location.reload();
+    });
   }
   </script>
 
@@ -68,8 +78,10 @@ $(document).ready(function() {
    <tr>
     
     <td ><?php echo $x++;?></td>
-
-    <td><a href="/css-nitw/index.php/user_controller/show_ad_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
+    <div style="display:none;" class="the_cid"> 
+      <?php echo $pro['cid']; ?>
+    </div>
+    <td ><a href="/css-nitw/index.php/user_controller/show_ad_c_details?cid=<?php echo $pro['cid'];?>"><?php echo $pro['cid'];?></a></td>
     <td><?php echo "Mess";?> </td>
     <td><?php echo $pro['date']; ?></td>
     <?php if( $pro['status']==0 ) :?>
@@ -84,13 +96,7 @@ $(document).ready(function() {
     <?php if( $pro['status']==2 ) :?>
               <td>Postponed</td>
           <?php endif ;?>
-    <?php if($pro['assignee']!=NULL):?>
-      <td id="assigned"> <a href="#" onclick="myFunction()"><?php echo $pro['assignee']; ?></a></td>
-    <?php else :?>
-      <td id="assigned"> <a href="#" onclick="myFunction()"> <?php echo 'NULL'; ?></a></td>
-    <?php endif; ?>
-  
-     <!-- <td><?php //echo $pro['status'];?></td> -->
+    <td id="assigned"> <button class='assign-btn' id='assigns' cid="<?php echo $pro['cid']?>" onclick="myFunction(this)"><?php echo $pro['assignee']; ?></td>
 
    </tr>
     <?php endif; ?>
